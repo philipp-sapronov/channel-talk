@@ -1,2 +1,1 @@
-export { HostClient } from "./HostClient";
-export { Client } from "./Client";
+export { HostClient, Client } from "channel-talk";

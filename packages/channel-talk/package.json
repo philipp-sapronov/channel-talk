@@ -1,7 +1,7 @@
 {
   "name": "channel-talk",
   "version": "1.0.1",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/philipp-sapronov/channel-talk.git"
