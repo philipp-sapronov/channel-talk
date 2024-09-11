@@ -1,0 +1,66 @@
+# Node modules
+/node_modules
+**/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+
+# Build output
+/dist
+/out
+/build
+
+# TypeScript
+*.tsbuildinfo
+
+# Production
+/.env
+.env.local
+.env.*.local
+
+# Tests
+/coverage
+/.nyc_output
+/.jest
+
+# Misc
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# eslint
+.eslintcache
+
+# Prettier
+.prettiercache
+
+# VS Code
+.vscode/
+
+# Output of Rollup or Webpack
+*.cache
+.cache/
+.cache-loader
+/compiled/
+
+# TypeScript declaration files
+*.d.ts
