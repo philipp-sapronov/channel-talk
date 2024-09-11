@@ -21,7 +21,7 @@
     "downlevelIteration": true,
     "incremental": true,
     "baseUrl": ".",
-    "types": ["jest"]
+    "types": ["jest", "node"],
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
