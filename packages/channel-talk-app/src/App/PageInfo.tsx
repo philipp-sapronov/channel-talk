@@ -19,29 +19,25 @@ export const PageInfo = ({
       <Box>
         <Flex justifyContent="space-between" alignItems="center" mb="2">
           <Text color="white" fontSize="x-large" fontWeight="semibold" py="2">
-            Channel Messaging API demo
+            Channel Talk
           </Text>
           <Github />
         </Flex>
         <Text color="gray.300" py="1" maxW="600px">
-          Explore the security differences between postMessage and Channel
-          Messaging API in real-time. See how{" "}
+          Easily manage messaging in web apps using the{" "}
           <Link onDark href={links.ChannelMessagingApi}>
             Channel Messaging API
           </Link>{" "}
-          keeps your data safe.
+          for fast and reliable communication between components.
         </Text>
         <Button colorScheme="green" variant="solid" mt="2" onClick={onReadMore}>
-          Read more
+          Get started
         </Button>
       </Box>
       <Divider my="4" borderColor="gray.600" />
       <Box py="2">
         <Text color="gray.100" fontSize="medium" fontWeight="semibold">
-          Message logs
-        </Text>
-        <Text color="gray.400">
-          Messages sent from the iframe will be displayed here.
+          Logs
         </Text>
       </Box>
       {messageLogs.length === 0 && (

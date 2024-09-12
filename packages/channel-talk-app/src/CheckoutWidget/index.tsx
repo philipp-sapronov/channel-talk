@@ -6,7 +6,6 @@ import weakMemoize from "@emotion/weak-memoize";
 import createCache from "@emotion/cache";
 import { Header } from "./Header";
 import { PaymentInfo } from "./PaymentInfo";
-import { WatermelonButton } from "./WatermelonButton";
 import { AvocadoButton } from "./AvocadoButton";
 import { Client } from "../postMessage";
 
@@ -63,25 +62,10 @@ export const CheckoutWidget = ({
         <Flex direction="column" gap="4" p="4">
           <Header amount={amount} />
           <PaymentInfo data={checkoutData} />
-          <WatermelonButton
-            isDisabled={!isReady}
-            onClick={() => {
-              window.parent.postMessage({
-                type: "checkout",
-                payload: {
-                  provider: "🍉 Watermelon",
-                  ...checkoutData,
-                },
-              });
-            }}
-          />
           <AvocadoButton
             isDisabled={!isReady}
             onClick={() => {
-              client.notify("checkout", {
-                provider: "🥑 Avocado",
-                ...checkoutData,
-              });
+              client.notify("checkout", checkoutData);
             }}
           />
         </Flex>

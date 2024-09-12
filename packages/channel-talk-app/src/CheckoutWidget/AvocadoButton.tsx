@@ -23,22 +23,8 @@ export const AvocadoButton = ({
         color="white"
         w="100%"
       >
-        Checkout with 🥑 Avocado
+        Checkout
       </Button>
-      <Text color="gray.700" mt="2">
-        🥑 Avocado uses the{" "}
-        <Text
-          as="a"
-          color="green.600"
-          textDecoration="underline"
-          href="https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Channel Messaging API
-        </Text>
-        . Secure and faster than postMessage.{" "}
-      </Text>{" "}
     </Box>
   );
 };

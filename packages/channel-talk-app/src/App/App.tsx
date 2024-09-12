@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { ChakraProvider, Flex, Grid, GridItem } from "@chakra-ui/react";
+import { Center, ChakraProvider, Flex, Grid, GridItem } from "@chakra-ui/react";
 import Frame from "react-frame-component";
 import styled from "@emotion/styled";
 
@@ -9,6 +9,7 @@ import { HostClient } from "../postMessage";
 import { Drawer } from "./Drawer";
 import { PageInfo } from "./PageInfo";
 import { AmountInput } from "./AmountInput";
+import { HanoiTowers } from "../HanoiTowers";
 
 const INITIAL_AMOUNT = 100;
 
@@ -76,30 +77,9 @@ function App() {
 
   return (
     <ChakraProvider>
-      <Grid templateColumns="1fr 1fr" bg="gray.50" minH="100vh">
-        <GridItem bg="gray.800" p="6" overflowY="auto" maxH="100vh">
-          <PageInfo
-            messageLogs={logs}
-            onReadMore={() => setIsDrawerOpen(true)}
-          />
-        </GridItem>
-        <GridItem py="6">
-          <Flex flexDirection="column" gap="2" maxW="400px" mx="auto">
-            <Wrapper text="🛒 Shopping cart">
-              <AmountInput
-                amount={amount}
-                onChange={onAmountChange}
-                disabled={!iframeReady}
-              />
-            </Wrapper>
-            <Wrapper text="💳 IFrame checkout widget">
-              <IFrame ref={setFrameRef} width="100%" height="550px">
-                <CheckoutWidget initialAmount={INITIAL_AMOUNT} />
-              </IFrame>
-            </Wrapper>
-          </Flex>
-        </GridItem>
-      </Grid>
+      <Center>
+        <HanoiTowers />
+      </Center>
       <Drawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
     </ChakraProvider>
   );

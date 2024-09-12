@@ -9,7 +9,7 @@ export const Github = () => {
       p="0"
       onClick={() =>
         window.open(
-          "https://github.com/philipp-sapronov/channel-messaging-api",
+          "https://github.com/philipp-sapronov/channel-talk",
           "_blank"
         )
       }
