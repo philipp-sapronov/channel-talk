@@ -6,16 +6,26 @@ import { TOWER_COLOR } from "./defs";
 export const TowerItem = ({
   item,
   isDraggable,
+  onDragStart,
+  onDragEnd,
 }: {
   item: ITowerItem;
   isDraggable: boolean;
+  onDragStart: () => void;
+  onDragEnd: () => void;
 }) => {
   return (
     <Box
       onDragStart={(e) => {
-        console.log("onDragStart", e);
+        if (!isDraggable) {
+          e.preventDefault();
+          return;
+        }
+
+        onDragStart();
       }}
       draggable={isDraggable}
+      onDragEnd={onDragEnd}
       css={css`
         position: relative;
         z-index: 1;

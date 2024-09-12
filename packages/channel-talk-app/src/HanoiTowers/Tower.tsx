@@ -2,23 +2,27 @@ import { Box } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import { useState } from "react";
 
-export const Tower = ({ children }: { children: React.ReactNode }) => {
+export const Tower = ({
+  children,
+  onDrop,
+}: {
+  children: React.ReactNode;
+  onDrop: () => void;
+}) => {
   const [dragOver, setDragOver] = useState(false);
 
   return (
     <Box
       onDragOver={(e) => {
         e.preventDefault();
-        console.log("onDragOver", e);
         setDragOver(true);
       }}
-      onDragLeave={(e) => {
-        console.log("onDragLeave", e);
+      onDragLeave={() => {
         setDragOver(false);
       }}
-      onDrop={(e) => {
-        console.log("onDrop", e);
+      onDrop={() => {
         setDragOver(false);
+        onDrop();
       }}
       css={css`
         position: relative;
@@ -31,6 +35,11 @@ export const Tower = ({ children }: { children: React.ReactNode }) => {
         padding: 100px 0 var(--chakra-space-2);
       `}
     >
+      <Box
+        css={css`
+          flex-grow: 1;
+        `}
+      />
       {children}
       <Box
         css={css`
