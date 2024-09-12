@@ -27,6 +27,10 @@ export const HanoiTowers = () => {
           return (
             <Tower
               key={id}
+              isDroppable={
+                (draggingItem !== null && draggingItem < items[0]) ||
+                items.length === 0
+              }
               onDrop={() => {
                 if (draggingItem) {
                   setDraggingItem(null);

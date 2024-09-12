@@ -5,9 +5,11 @@ import { useState } from "react";
 export const Tower = ({
   children,
   onDrop,
+  isDroppable,
 }: {
   children: React.ReactNode;
   onDrop: () => void;
+  isDroppable: boolean;
 }) => {
   const [dragOver, setDragOver] = useState(false);
 
@@ -15,14 +17,20 @@ export const Tower = ({
     <Box
       onDragOver={(e) => {
         e.preventDefault();
-        setDragOver(true);
+        if (isDroppable) {
+          setDragOver(true);
+        }
       }}
       onDragLeave={() => {
-        setDragOver(false);
+        if (isDroppable) {
+          setDragOver(false);
+        }
       }}
       onDrop={() => {
-        setDragOver(false);
-        onDrop();
+        if (isDroppable) {
+          setDragOver(false);
+          onDrop();
+        }
       }}
       css={css`
         position: relative;
@@ -32,7 +40,7 @@ export const Tower = ({
         align-items: flex-end;
         flex-direction: column;
         align-items: center;
-        padding: 100px 0 var(--chakra-space-2);
+        padding: 100px 0 var(--chakra-space-4);
       `}
     >
       <Box
